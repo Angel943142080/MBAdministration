@@ -128,8 +128,9 @@ export default defineComponent({
     }
     .main {
       flex: 1;
-      background: #f5f5f5;
-      padding: 16px;
+      // background: #f5f5f5;
+      background: #ffffff;
+      // padding: 16px;
       overflow: auto;
       &.pt0 {
         padding-top: 0;

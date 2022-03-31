@@ -1,0 +1,85 @@
+/**
+ * 一些公共样式
+ *
+ * @Author jixianga <jixianga@126.com>
+ * @Date 2021年12月02日10:17:56
+ */
+
+// 定义变量
+:root {
+    --mainColor: #0db191;
+    --mBgColor: #F1FBF9;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+.fw {
+    &-n {
+        font-weight: 400;
+    }
+    &-m {
+        font-weight: 700;
+    }
+    &-b {
+        font-weight: 900;
+    }
+}
+
+.ta {
+    &-c {
+        text-align: center;
+    }
+    &-r {
+        text-align: right;
+    }
+}
+
+.module-bg {
+    background-color: var(--mBgColor);
+}
+
+@for $i from 0 through 100 {
+    .fz-#{$i} {
+        font-size: #{$i}px !important;
+    }
+    .lh-#{$i}px {
+        line-height: #{$i}px !important;
+    }
+    .m-#{$i} {
+        margin: #{$i}px !important;
+    }
+    .mt-#{$i} {
+        margin-top: #{$i}px !important;
+    }
+    .ml-#{$i} {
+        margin-left: #{$i}px !important;
+    }
+    .mr-#{$i} {
+        margin-right: #{$i}px !important;
+    }
+    .mb-#{$i} {
+        margin-bottom: #{$i}px !important;
+    }
+    .p-#{$i} {
+        padding: #{$i}px !important;
+    }
+    .pt-#{$i} {
+        padding-top: #{$i}px !important;
+    }
+    .pl-#{$i} {
+        padding-left: #{$i}px !important;
+    }
+    .pr-#{$i} {
+        padding-right: #{$i}px !important;
+    }
+    .pb-#{$i} {
+        padding-bottom: #{$i}px !important;
+    }
+}

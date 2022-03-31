@@ -78,6 +78,11 @@ export default env => {
           changeOrigin: true,
           rewrite: path => path.replace(/^\/api/, ''),
         },
+        '/txApi': {
+          target: 'https://apis.map.qq.com', // 腾讯接口的域名
+          changeOrigin: true,
+          rewrite: path => path.replace(/^\/txApi/, ''),
+        },
       },
     },
     esbuild: false,

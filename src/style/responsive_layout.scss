@@ -1,0 +1,47 @@
+/**
+ * 响应式布局
+ *
+ * @Author jixianga <jixianga@126.com>
+ * @Date 2021年12月02日10:17:56
+ */
+
+.header__inner {
+    position: relative;
+    z-index: 10;
+    max-width: 1110px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.container {
+    width: 100%;
+    max-width: 1110px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// 这边 spacing 的样式是为了控制在其他设备上，给不同的距离
+.spacing-section-ptb {
+    &-80 {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    &-100 {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}
+
+.spacing-section-mtb {
+    &-80 {
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+}
+
+.spacing-section-pl-60 {
+    padding-left: 60px;
+}
+
+.spacing-section-pr-60 {
+    padding-right: 60px;
+}

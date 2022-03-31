@@ -36,9 +36,12 @@
 
 <template>
   <router-view v-slot="{ Component }">
-    <keep-alive :include="cacheList">
-      <component :is="Component" :key="key" />
-    </keep-alive>
+    <!-- mode="out-in" -->
+    <transition name="slide-left" mode="out-in">
+      <keep-alive :include="cacheList">
+        <component :is="Component" :key="key" />
+      </keep-alive>
+    </transition>
   </router-view>
 </template>
 <script>
@@ -52,7 +55,7 @@ export default defineComponent({
     const route = useRoute()
     const cacheList = computed(() => store.state.tags.cacheList)
     const key = computed(() => route.fullPath)
-
+    // console.log(key)
     return {
       cacheList,
       key,
@@ -60,3 +63,28 @@ export default defineComponent({
   },
 })
 </script>
+
+<style scoped>
+.slide-left-enter-from {
+  transform: translateX(-20px);
+  opacity: 0;
+}
+
+.slide-left-enter-to {
+  transform: translateX(0px);
+}
+
+.slide-left-leave-from {
+  transform: translateX(0);
+}
+
+.slide-left-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
+
+.slide-left-enter-active,
+.slide-left-leave-active {
+  transition: all 0.1s;
+}
+</style>

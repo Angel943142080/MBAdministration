@@ -32,14 +32,29 @@ import error from './modules/error'
 import login from './modules/login'
 import lock from './modules/lock'
 import home from './modules/home'
-import test from './modules/test'
+// import test from './modules/test'
+import operate from './modules/operate' //运营管理
+// import housingResources from './modules/housingResources'  //房源管理
+import service from './modules/service' //服务管理
+import memberManagement from './modules/memberManagement' //会员管理
+import equipment from './modules/equipment' //设备管理
+import jurisdiction from './modules/jurisdiction' //权限管理
 
 /* 菜单栏的路由 */
-// 固定菜单
-export const fixedRoutes = [...home]
+// 侧边固定菜单
+export const fixedRoutes = [
+  ...home,
+  ...operate,
+  // ...housingResources,
+  ...service,
+  ...memberManagement,
+  ...equipment,
+  ...jurisdiction,
+]
 // 动态菜单
-export const asyncRoutes = [...test]
-
+// export const asyncRoutes = [...test]
+export const asyncRoutes = []
+console.log(fixedRoutes)
 const router = createRouter({
   history: createWebHashHistory(),
   routes: [

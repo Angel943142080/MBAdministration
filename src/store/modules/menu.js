@@ -47,13 +47,11 @@ const getFilterRoutes = (targetRoutes, ajaxRoutes) => {
       filterRoutes.push(route)
     }
   })
-
   return filterRoutes
 }
 
 const getFilterMenus = (arr, parentPath = '') => {
   const menus = []
-
   arr.forEach(item => {
     if (!item.hidden) {
       const menu = {
@@ -62,7 +60,10 @@ const getFilterMenus = (arr, parentPath = '') => {
         icon: item.icon,
       }
       if (item.children) {
-        if (item.children.filter(child => !child.hidden).length <= 1) {
+        if (
+          item.children.filter(child => !child.hidden).length <= 1 &&
+          item.children[0].name === 'home'
+        ) {
           menu.url = generateUrl(item.children[0].path, menu.url)
         } else {
           menu.children = getFilterMenus(item.children, menu.url)
@@ -99,7 +100,7 @@ export default {
         // 过滤出需要添加的动态路由
         const filterRoutes = getFilterRoutes(asyncRoutes, data)
         filterRoutes.forEach(route => router.addRoute(route))
-
+        // console.log(fixedRoutes,filterRoutes)
         // 生成菜单
         const menus = getFilterMenus([...fixedRoutes, ...filterRoutes])
         commit('SET_MENUS', menus)

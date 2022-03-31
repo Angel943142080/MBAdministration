@@ -56,6 +56,7 @@ module.exports = {
         args: 'none',
       },
     ],
+    "vue/comment-directive": 'off',
     'vue/no-unused-vars': 'warn',
     'no-prototype-builtins': 'off',
     'no-irregular-whitespace': 'off',

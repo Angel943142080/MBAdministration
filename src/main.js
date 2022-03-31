@@ -36,15 +36,24 @@
 
 import { createApp } from 'vue'
 import App from './App.vue'
-
+// import 'default-passive-events'
 const app = createApp(App)
 
 // 引入element-plus
-import ElementPlus from 'element-plus'
+import ElementPlus, { ElMessage } from 'element-plus'
+import * as ElIcons from '@element-plus/icons'
 import './assets/style/element-variables.scss'
+
+// 引入 echarts 核心模块，核心模块提供了 echarts 使用必须要的接口。
+import * as echarts from 'echarts'
+
 // 引入中文语言包
 import 'dayjs/locale/zh-cn'
 import locale from 'element-plus/lib/locale/lang/zh-cn'
+
+// 引入jsonp插件  请求腾讯API
+import { jsonp } from 'vue-jsonp'
+app.config.globalProperties.$jsonp = jsonp
 
 // 引入路由
 import router from './router'
@@ -58,6 +67,10 @@ import './permission'
 // 引入svg图标注册脚本
 import 'vite-plugin-svg-icons/register'
 
+// 全局引入样式
+import './style/_flex.scss'
+import './style/_common.scss'
+
 // 注册全局组件
 import * as Components from './global-components'
 Object.entries(Components).forEach(([key, component]) => {
@@ -67,11 +80,20 @@ Object.entries(Components).forEach(([key, component]) => {
 // 注册自定义指令
 import * as Directives from '@/directive'
 Object.values(Directives).forEach(fn => fn(app))
-
+for (const name in ElIcons) {
+  app.component(name, ElIcons[name])
+}
 // 错误日志
 import useErrorHandler from './error-log'
 useErrorHandler(app)
-
+// vue3 给原型上挂载属性
+app.config.globalProperties.$echarts = echarts
+// console.log(ElMessage.success({
+//   message: 'Congrats, this is a success message.',
+//   type: 'success',
+// }))
+// provide('message', ElMessage)
+app.config.globalProperties.$message = ElMessage
 app
   .use(ElementPlus, {
     locale,

@@ -34,8 +34,8 @@
 
 <template>
   <div class="brand">
-    <img class="logo" src="~@/assets/logo.svg" @click="goHome" />
-    <div class="title">Vue3 Element Admin</div>
+    <img class="logo" src="~@/assets/img/Manbai.svg" />
+    <div class="title">&nbsp;漫柏CMS</div>
   </div>
 </template>
 <script>
@@ -58,11 +58,12 @@ export default defineComponent({
   padding: 0 8px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   .logo {
     cursor: pointer;
     max-width: 32px;
     max-height: 32px;
+    // transform:scale(1.2);
   }
   .title {
     color: #fff;

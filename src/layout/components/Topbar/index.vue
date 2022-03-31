@@ -110,7 +110,7 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .header {
-  height: 48px;
+  // height: 48px;
   border-bottom: 1px solid #e0e4ef;
   display: flex;
   justify-content: space-between;
@@ -120,7 +120,7 @@ export default defineComponent({
   .navigation {
     display: flex;
     align-items: center;
-    overflow: hidden;
+    // overflow: hidden;
   }
   .action {
     display: flex;

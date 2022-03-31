@@ -18,7 +18,7 @@ const COLLAPSE = 'VEA-COLLAPSE'
 export default {
   namespaced: true,
   state: {
-    title: 'Vue3 Element Admin',
+    title: '漫柏管理端',
     authorization: getItem(TOKEN),
     sidebar: {
       collapse: getItem(COLLAPSE),

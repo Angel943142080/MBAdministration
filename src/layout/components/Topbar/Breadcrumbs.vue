@@ -112,7 +112,7 @@ export default defineComponent({
 .breadcrumb {
   margin-left: 10px;
   white-space: nowrap;
-  overflow: hidden;
+  // overflow: hidden;
   text-overflow: ellipsis;
   ::v-deep(a),
   ::v-deep(.is-link) {

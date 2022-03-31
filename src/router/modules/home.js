@@ -19,7 +19,7 @@ export default [
     component: Layout,
     name: 'Dashboard',
     meta: {
-      title: '工作台',
+      title: '首页',
     },
     icon: 'home',
     children: [

@@ -38,7 +38,7 @@
     :class="{ collapse: collapse, mobile: device === 'mobile' }"
   >
     <logo />
-    <menus :collapse="collapse" />
+    <menus :collapse="collapse" :unique-opened="true" />
   </div>
   <div class="mask" @click="closeSidebar"></div>
 </template>
